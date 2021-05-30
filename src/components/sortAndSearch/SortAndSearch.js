@@ -6,13 +6,13 @@ import Context from '../context'
 
 function SortAndSearch(){
     const { cars } = useSelector((state)=>state.content);
-    const { nameAsc, priceAsc, capacityAsc } = useSelector((state)=>state.content);
+    const { nameAsc, priceAsc, capacityAsc } = useSelector((state)=>state.sort);
+    const { oldcars } = useSelector((state)=>state.content);
     const dispatch = useDispatch();
     const setCars = (data) => dispatch(contentActions.setCars(data));
     const setNameAsc = (data) => dispatch(sortActions.setNameAsc(data));
     const setPriceAsc = (data) => dispatch(sortActions.setPriceAsc(data));
     const setCapacityAsc = (data) => dispatch(sortActions.setCapacityAsc(data));
-    const {oldcars} = useContext(Context);
     const InputRef = useRef(null);
     return(
         <>
@@ -74,10 +74,10 @@ function SortAndSearch(){
             <button className="booking-btn" onClick={()=>{
                 if(capacityAsc){
                     const newCars = cars.sort((a,b)=>{
-                        if (a.characteristics[2]<b.characteristics[2]) {
+                        if (a.characteristics[3]<b.characteristics[3]) {
                         return -1;
                         }
-                        if (a.characteristics[2]>b.characteristics[2]) {
+                        if (a.characteristics[3]>b.characteristics[3]) {
                         return 1;
                         }
                         return 0;
@@ -86,10 +86,10 @@ function SortAndSearch(){
                 }
                 else{
                     const newCars = cars.sort((a,b)=>{
-                        if (a.characteristics[2]>b.characteristics[2]) {
+                        if (a.characteristics[3]>b.characteristics[3]) {
                         return -1;
                         }
-                        if (a.characteristics[2]<b.characteristics[2]) {
+                        if (a.characteristics[3]<b.characteristics[3]) {
                         return 1;
                         }
                         return 0;

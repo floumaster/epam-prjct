@@ -49,10 +49,13 @@ function Content(){
         contentLoaderRef.current.className = "lds-circle";
         contentRef.current.className = "car-list hidden";
         getCars(city, currPage, queryObj).then(data => {
+            dispatch(contentActions.setOldCars(data.newArr))
             dispatch(contentActions.setCars(data.newArr))
             dispatch(contentActions.setPages(data.pages))
-            dispatch(contentActions.setOldCars(data.newArr))
         }).then(()=>{
+            contentLoaderRef.current.className = "lds-circle hidden";
+            contentRef.current.className = "car-list";
+        }).catch(err=>{
             contentLoaderRef.current.className = "lds-circle hidden";
             contentRef.current.className = "car-list";
         })
@@ -79,7 +82,6 @@ function Content(){
         "8-30 days",
         "31-60 days"
     ]
-    const pages = Math.ceil(cars.length/10);
     return (
         <>
         <main className="content-wrapper" name="content">
