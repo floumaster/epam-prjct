@@ -1,16 +1,18 @@
 import React, {useContext, useState, useRef} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { contentActions } from '../../store/content/actions';
+import { sortActions } from '../../store/sort/actions';
 import Context from '../context'
 
 function SortAndSearch(){
     const { cars } = useSelector((state)=>state.content);
+    const { nameAsc, priceAsc, capacityAsc } = useSelector((state)=>state.content);
     const dispatch = useDispatch();
     const setCars = (data) => dispatch(contentActions.setCars(data));
+    const setNameAsc = (data) => dispatch(sortActions.setNameAsc(data));
+    const setPriceAsc = (data) => dispatch(sortActions.setPriceAsc(data));
+    const setCapacityAsc = (data) => dispatch(sortActions.setCapacityAsc(data));
     const {oldcars} = useContext(Context);
-    const [nameAsc, setNameAsc] = useState(true);
-    const [priceAsc, setPriceAsc] = useState(true);
-    const [capacityAsc, setCapacityAsc] = useState(true);
     const InputRef = useRef(null);
     return(
         <>

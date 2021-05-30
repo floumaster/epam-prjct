@@ -19,9 +19,8 @@ import Register from './components/popUp/Registration'
 import Header from './components/header/Header'
 
 function App() {
-  const {city, currPage, queryObj, oldcars, pages, loginInfo, registerInfo, person, isContentVisible} = useSelector((state)=>state.content);
+  const {loginInfo, registerInfo} = useSelector((state)=>state.login);
   const dispatch = useDispatch();
-
   const sideBarRef = useRef(null);
   const navBarRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -91,7 +90,6 @@ function App() {
     .catch((err)=>{
         loginLoaderRef.current.className = "lds-roller transpanent";
         errorRef.current.className = "error";
-        console.log(errorRef.current)
     })
     }
     }, [loginInfo]);
@@ -103,6 +101,8 @@ function App() {
   function logout(){
     personRef.current.className = "profile-wrapper hidden";
     popupRef.current.className = "login";
+    mobilePersonRef.current.className = "profile-wrapper hidden";
+    mobilePopupRef.current.className = "login";
   }
   return (
     <>

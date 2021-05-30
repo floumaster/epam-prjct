@@ -2,10 +2,11 @@ import React, {useContext} from 'react';
 import Context from '../context'
 import {useDispatch} from "react-redux"
 import { contentActions } from '../../store/content/actions';
+import { loginActions } from '../../store/login/actions';
 
 function Login(){
     const dispatch = useDispatch();
-    const setLoginInfo = (info) => dispatch(contentActions.setLoginInfo(info));
+    const setLoginInfo = (info) => dispatch(loginActions.setLoginInfo(info));
     const {closePopUp, loginRef, loginLoaderRef, errorRef} = useContext(Context);
     return(
         <div className="popup-login hidden" ref={loginRef}>

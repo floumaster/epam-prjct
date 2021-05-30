@@ -12,7 +12,7 @@ function About(){
     const {promoRef} = useContext(Context);
     useEffect(() => {
         promoRef.current.className = "promo-wrapper hidden";
-        //dispatch(contentActions.setTitle(`About us`))
+        dispatch(contentActions.setTitle(`About us`))
     }, []);
     let settings = {
         autoplay: true,

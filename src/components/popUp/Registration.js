@@ -2,10 +2,11 @@ import React, {useContext} from 'react';
 import Context from '../context'
 import {useDispatch } from "react-redux"
 import { contentActions } from '../../store/content/actions';
+import { loginActions } from '../../store/login/actions';
 
 function Register(){
     const dispatch = useDispatch();
-    const setRegisterInfo = (info) => dispatch(contentActions.setRegisterInfo(info));
+    const setRegisterInfo = (info) => dispatch(loginActions.setRegisterInfo(info));
     const {closePopUp, regLoaderRef, registerRef} = useContext(Context);
     return(
         <div className="popup-login hidden" ref={registerRef}>

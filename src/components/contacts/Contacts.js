@@ -9,7 +9,7 @@ function Contacts(){
     const dispatch = useDispatch();
     useEffect(() => {
         promoRef.current.className = "promo-wrapper hidden";
-        dispatch(contentActions.setTitle(`Contacts`))
+        dispatch(contentActions.setTitle(`About us`))
     }, []);
     return(
         <div className="content">

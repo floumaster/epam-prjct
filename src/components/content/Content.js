@@ -34,14 +34,10 @@ function handleScroll(sideBarRef, navBarRef, videoRef, isContentVisible){
     return query;
   }
 
-  function getCars(city, contentLoaderRef, contentRef, page, queryObj){
-    contentLoaderRef.current.className = "lds-circle";
-    contentRef.current.className = "car-list hidden";
+  function getCars(city, page, queryObj){
     const query = makeQuery(queryObj);
     return fetch(`https://whispering-wave-67768.herokuapp.com/api/cars/${city}?page=${page}${query}`)
     .then(data=>{
-      contentLoaderRef.current.className = "lds-circle hidden";
-      contentRef.current.className = "car-list";
         return data.json();
     })
   }
@@ -50,11 +46,16 @@ function Content(){
     const {promoRef, contentLoaderRef, contentRef, sideBarRef, navBarRef, videoRef} = useContext(Context);
     const { cars, city, isContentVisible, queryObj, currPage } = useSelector((state)=>state.content);
     useEffect(() => {
-        getCars(city, contentLoaderRef, contentRef, currPage, queryObj).then(data => {
+        contentLoaderRef.current.className = "lds-circle";
+        contentRef.current.className = "car-list hidden";
+        getCars(city, currPage, queryObj).then(data => {
             dispatch(contentActions.setCars(data.newArr))
             dispatch(contentActions.setPages(data.pages))
             dispatch(contentActions.setOldCars(data.newArr))
-        });
+        }).then(()=>{
+            contentLoaderRef.current.className = "lds-circle hidden";
+            contentRef.current.className = "car-list";
+        })
     }, [city, currPage, queryObj]);
     useEffect(() => {
         sideBarRef.current.className = "sidebar";
@@ -81,7 +82,7 @@ function Content(){
     const pages = Math.ceil(cars.length/10);
     return (
         <>
-        <main className="content-wrapper" name="content" id="content">
+        <main className="content-wrapper" name="content">
             <BreadCrumbs/>
             <SortAndSearch/>
             <div className="lds-circle hidden" ref={contentLoaderRef}><div></div></div>
@@ -89,7 +90,7 @@ function Content(){
             <ul className={cars.length===0?"car-list hidden":"car-list"} ref={contentRef}>
                 {cars.map(el=>{
                     return(
-                    <li className="car" key={nanoid(10)}>
+                    <li className="car" key={nanoid(10)} id="content">
                         <img className="car-photo" src={el.photoSrc} alt={el.name}/>
                         <h2 className="car-name">{el.name}</h2>
                         <ul className="characteristics">
