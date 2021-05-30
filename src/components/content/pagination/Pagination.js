@@ -1,9 +1,12 @@
-import React, {useState, useRef, useContext} from 'react'
+import React, {useContext} from 'react'
 import { nanoid } from 'nanoid';
-import Context from '../../context'
+import {useDispatch, useSelector } from "react-redux"
+import { contentActions } from '../../../store/content/actions';
 
 function Pagination(){
-    const {currPage, setCurrPage, pages} = useContext(Context);
+    const dispatch = useDispatch();
+    const setCurrPage = (page)=>dispatch(contentActions.setCurrPage(page))
+    const { currPage, pages } = useSelector((state)=>state.content);
     const curr_page = currPage;
     let arr = [];
     if(curr_page === 1 || curr_page === 2){

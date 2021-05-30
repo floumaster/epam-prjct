@@ -1,14 +1,15 @@
-import React, {useContext, useEffect, useRef} from 'react';
-import Navbar from '../header/Navbar'
-import MobileNavbar from '../header/MobileNavBar'
+import React, {useEffect, useContext} from 'react';
 import BreadCrumbs from '../breadCrumbs/BreadCrumbs'
+import {useDispatch, useSelector } from "react-redux"
+import { contentActions } from '../../store/content/actions';
 import Context from '../context'
 
 function Contacts(){
-    const {setTitle, promoRef} = useContext(Context);
+    const {promoRef} = useContext(Context);
+    const dispatch = useDispatch();
     useEffect(() => {
         promoRef.current.className = "promo-wrapper hidden";
-        setTitle(`Contacts`)
+        dispatch(contentActions.setTitle(`Contacts`))
     }, []);
     return(
         <div className="content">

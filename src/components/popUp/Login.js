@@ -1,8 +1,12 @@
 import React, {useContext} from 'react';
 import Context from '../context'
+import {useDispatch} from "react-redux"
+import { contentActions } from '../../store/content/actions';
 
 function Login(){
-    const {loginInfo, setLoginInfo, wrapperRef, loginRef, loginLoaderRef, errorRef, closePopUp} = useContext(Context);
+    const dispatch = useDispatch();
+    const setLoginInfo = (info) => dispatch(contentActions.setLoginInfo(info));
+    const {closePopUp, loginRef, loginLoaderRef, errorRef} = useContext(Context);
     return(
         <div className="popup-login hidden" ref={loginRef}>
             <form className="login-form" onSubmit={(e)=>{
@@ -21,8 +25,8 @@ function Login(){
                 }
                 setLoginInfo(loginInfo)
             }}>
-                <h2 className="login-form-title">Login</h2>
                 <a className="close-btn" onClick={()=>{closePopUp(loginRef)}}>x</a>
+                <h2 className="login-form-title">Login</h2>
                 <label className="login-form-label">Username</label>
                 <input className="login-form-input" type="input"/>
                 <label className="login-form-label" >Password</label>

@@ -1,13 +1,14 @@
-import React, {useContext} from 'react';
-import Context from '../context'
+import React from 'react';
 import { nanoid } from 'nanoid';
 import { NavLink } from 'react-router-dom';
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
-import { map } from 'leaflet';
+import {useDispatch, useSelector } from "react-redux"
+import { contentActions } from '../../store/content/actions';
 
 function Breadcrumbs(){
     const breadcrumbs = useBreadcrumbs();
-    const {setCity, title, setCurrPage} = useContext(Context);
+    const dispatch = useDispatch();
+    const { title } = useSelector((state)=>state.content);
     return(
         <div className="top-bar" name="content">
             <h2 className="list-title">
@@ -19,9 +20,9 @@ function Breadcrumbs(){
                         <li className={id !== breadcrumbs.length-1 ? "breadcrumb arrow" : "breadcrumb"} key={nanoid(10)}>
                             <NavLink className="breadcrumb-link" to={breadcrumb.key} onClick={()=>{
                                 if(breadcrumb.key === '/'){
-                                    setCity('Kiev')
+                                    dispatch(contentActions.setCity('Kiev'))
                                 }
-                                setCurrPage(1);
+                                dispatch(contentActions.setCurrPage(1))
                             }}>{breadcrumb.key === '/' ? 'Home' : breadcrumb.key.split('/')[1]}</NavLink>
                         </li>
                     )

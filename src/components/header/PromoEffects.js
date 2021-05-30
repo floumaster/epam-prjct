@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import Context from '../context'
 
 function PromoEffects(){
-    const {videoRef, promoRef} = useContext(Context);
+    const { videoRef, promoRef } = useContext(Context);
     return (
         <div className="promo-wrapper hidden" ref={promoRef}>
             <video className="promo" src="/images/promo.mp4" muted autoPlay="autoplay" ref={videoRef}></video>

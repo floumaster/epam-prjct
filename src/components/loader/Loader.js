@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import Context from '../context'
 
 function Loader(){
-    const {loaderRef} = useContext(Context);
+    const { loaderRef } = useContext(Context);
     return(
         <div className="loader-wrapper hidden" id="loader-wrapper" ref={loaderRef}>
             <div className="loader">

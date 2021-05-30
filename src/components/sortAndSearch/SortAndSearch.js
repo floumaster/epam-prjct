@@ -1,8 +1,13 @@
 import React, {useContext, useState, useRef} from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { contentActions } from '../../store/content/actions';
 import Context from '../context'
 
 function SortAndSearch(){
-    const {cars, setCars, oldcars, setOldCars} = useContext(Context);
+    const { cars } = useSelector((state)=>state.content);
+    const dispatch = useDispatch();
+    const setCars = (data) => dispatch(contentActions.setCars(data));
+    const {oldcars} = useContext(Context);
     const [nameAsc, setNameAsc] = useState(true);
     const [priceAsc, setPriceAsc] = useState(true);
     const [capacityAsc, setCapacityAsc] = useState(true);
@@ -105,6 +110,11 @@ function SortAndSearch(){
                     setCars([...cars.filter(el=>el.name.startsWith(name))]);
                 }
                 }}>Search</button>
+            <button className="cansel-btn" onClick={(e)=>{
+                e.preventDefault();
+                setCars(oldcars);
+                InputRef.current.value = "";
+                }}>Cansel</button>
         </form>
         </>
     )

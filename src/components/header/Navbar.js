@@ -2,15 +2,36 @@ import React, {useContext} from 'react';
 import { nanoid } from 'nanoid';
 import { NavLink } from 'react-router-dom';
 import Context from '../context'
+import {useDispatch, useSelector } from "react-redux"
+import { contentActions } from '../../store/content/actions';
+import {
+    FacebookShareButton,
+    LinkedinShareButton,
+    TelegramShareButton,
+    TwitterShareButton
+  } from "react-share";
+
+  import {
+    FacebookIcon,
+    LinkedinIcon,
+    TelegramIcon,
+    TwitterIcon
+  } from "react-share";
 
 function Navbar(){
+    const dispatch = useDispatch();
+    const { navBarRef, loginRef, wrapperRef, popupRef, personRef, registerRef} = useContext(Context);
+    const { person} = useSelector((state)=>state.content);
+    const setCity = (city) => dispatch(contentActions.setCity(city));
+    const setIsContentVisible = (isVisible) => dispatch(contentActions.setIsContentVisible(isVisible));
+    const setCurrPage = (page) => dispatch(contentActions.setCurrPage(page));
     function openPopUp(popUpRef){
         wrapperRef.current.className = "wrapper blured";
         popUpRef.current.className = "popup-login";
     }
-    const {navBarRef, setCity, setIsContentVisible, setCurrPage, wrapperRef, loginRef, popupRef, personRef, person, logout, registerRef} = useContext(Context);
+    const {logout} = useContext(Context);
     const cities = ['Kiev', 'Lviv', 'Kharkiv', 'Dnepr'];
-    const company = ['About us', 'FAQ'];
+    const company = ['About us', 'Contacts'];
     return(
         <nav className="navbar" ref={navBarRef}>
             <ul className="navbar-links">
@@ -49,16 +70,11 @@ function Navbar(){
                 <NavLink className="logo-link" to="/">EASY CARS</NavLink>
             </div>
             <ul className="navbar-links">
-                <li className="navbar-unit with-border">
-                    <NavLink className="navbar-link" to="/contacts" onClick={()=>{
-                        console.log("allo")
-                        setIsContentVisible(false)}}>Contacts</NavLink>
-                </li>
                 <div className="profile">
                     <div className="profile-wrapper hidden" ref={personRef}>
                         <figure className="profile-info">
                             <div className="profile_photo-wrapper">
-                                <img className="profile_photo" src="../images/teacher.jpg" alt="profile"/>
+                                <img className="profile_photo" src="../images/boom.png" alt="profile"/>
                             </div>
                             <figcaption className="nickname">{person.fullname}</figcaption>
                         </figure>
@@ -72,6 +88,12 @@ function Navbar(){
                             Register
                         </li>
                     </ul>
+                </div>
+                <div className="sharing">
+                    <FacebookShareButton children={<FacebookIcon size={32} round={true} bgStyle={{fill:"#000000"}}/>} url="https://www.hltv.org/matches"/>
+                    <LinkedinShareButton children={<LinkedinIcon size={32} round={true} bgStyle={{fill:"#000000"}}/>} url="https://www.hltv.org/matches"/>
+                    <TelegramShareButton children={<TelegramIcon size={32} round={true} bgStyle={{fill:"#000000"}}/>} url="https://www.hltv.org/matches"/>
+                    <TwitterShareButton children={<TwitterIcon size={32} round={true} bgStyle={{fill:"#000000"}}/>} url="https://www.hltv.org/matches"/>
                 </div>
             </ul>
         </nav>

@@ -20,8 +20,8 @@ html {
     width: 100%;
     grid-template: "head head"
                    "left main"
-                   "footer footer";
-    grid-template-columns: 280px calc(100vw - 295px);
+                   "content content";
+    grid-template-columns: 280px calc(100% - 280px);
 }
 
 .promo-wrapper{
@@ -94,8 +94,51 @@ html {
 
 .search-btn{
     display: inline-block;
-    border-radius: 0px 25px 25px 0;
+    border-radius: 0 25px 25px 0;
     width: 70px;
+    height: 40px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Merriweather', serif;
+    background-color: rgb(255, 182, 46);
+    outline: none;
+}
+
+.lds-circle {
+    display: inline-block;
+    transform: translateZ(1px);
+    margin-bottom: 20px;
+  }
+  .lds-circle > div {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    background: rgb(255, 182, 46);
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  @keyframes lds-circle {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+      transform: rotateY(3600deg);
+    }
+  }
+
+.cansel-btn{
+    display: inline-block;
+    border-radius: 25px;
+    margin-left: 20px;
+    width: 100px;
     height: 40px;
     outline: none;
     font-size: 14px;
@@ -151,19 +194,18 @@ html {
 
 .popup-login{
     width: 24vw;
-    height: 80vh;
+    height: 90vh;
     background-color: #fff;
     position: fixed;
-    top: calc((100vh - 80vh)/2);
+    top: calc((100vh - 90vh)/2);
     left: calc((100vw - 24vw)/2);
     border: $b;
     z-index: 3;
 }
 
 .login-form-title{
-    margin-top: 40px;
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 10%;
 }
 
 .login-form-label, .login-form-input{
@@ -179,14 +221,18 @@ html {
 }
 
 .close-btn{
-    top: -100px;
+    top: 1vh;
     left: 10px;
+    margin-bottom: 3vh;
+    display: block;
 }
 
 .content{
     position: relative;
+    grid-area: content;
+    margin: auto;
     top: 14vh;
-    width: 98.8vw;
+    width: 100%;
 }
 
 .bottom{
@@ -318,6 +364,7 @@ html {
     height: 14vh;
     display: block;
     justify-content: left;
+    border-right: 2px solid #fff;
 }
 
 .profile_photo-wrapper{
@@ -340,6 +387,17 @@ html {
     margin-top: 0;
 }
 
+.sharing{
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+}
+
+
+.right{
+    margin-left: 15%;
+}
+
 .logout{
     margin-top: 40px;
 }
@@ -355,6 +413,33 @@ html {
     cursor: pointer;
     margin-top: 10px;
     color: #fff;
+}
+
+.big-car{
+    margin-top: 30px;
+    width: 100%;
+    height: 40vh;
+}
+
+.partners-wrapper{
+    width: 100vw;
+    height: 280px;
+    margin-top: 50px;
+    background-color: rgb(224, 224, 224);
+    box-sizing: border-box;
+}
+
+.partners-title{
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    padding-top: 40px;
+}
+
+.partners-slogan{
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    padding-top: 20px;
+    color: grey;
 }
 
 .login{
@@ -434,15 +519,19 @@ html {
     font-size: 40px;
 }
 
-.login-form-data, .login-form-input, .login-form-submit{
+.login-form-data, .login-form-input{
     display: block;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 3vh;
+}
+
+.login-form-submit{
+
 }
 
 .login-form-input{
     width: 80%;
-    height: 40px;
+    height: 5vh;
 }
 
 .login-form-data{
@@ -538,9 +627,10 @@ html {
     background-color: rgb(255, 255, 255);
 }
 
+
 .top-bar{
     display: block;
-    width: 100%;
+    width: 98%;
     margin: auto;
     margin-top: 20px;
     border-radius: 30px 10px;
@@ -719,6 +809,22 @@ html {
     cursor: pointer;
 }
 
+.partners-slider{
+    width: 80%;
+    margin: auto;
+}
+
+.partner-logo{
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.no-cars{
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
 .curr{
     color: rgb(160, 160, 160);
 }
@@ -754,7 +860,7 @@ html {
     position: relative;
     width: 80px;
     height: 80px;
-    margin-top: 10px;
+    margin-top: 2vh;
   }
   .lds-roller div {
     animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -840,11 +946,8 @@ html {
         margin-top: -30px;
     }
     .login-form-title{
-        margin-bottom: 0px;
-    }
-    .close-btn{
-        top: -60px;
-        left: 10px;
+        display: block;
+        margin-bottom: 10%;
     }
     .error{
         margin-top: -80px;
@@ -856,6 +959,59 @@ html {
     }
 }
 
+.mobile-menu{
+    .navbar-link{
+        font-size: 20px;
+        font-family: 'Merriweather', serif;
+        color: #000;
+        &::after{
+            background-color: #000;
+        }
+    }
+    .mobile-drop-list{
+        margin-top: 10px;
+        margin-left: 70px;
+    }
+    .profile{
+        margin: auto;
+    }
+    .login{
+        display: block;
+        padding: 0;
+    }
+    .hidden{
+        display: none;
+    }
+    .sign-in, .sign-up{
+        margin: auto;
+        margin-top: 0;
+        width: 100px;
+        font-size: 20px;
+        font-family: 'Merriweather', serif;
+        color: #000;
+    }
+    .sign-in::after, .sign-up::after {
+        background-color: hsl(0, 0%, 0%);
+    }
+    .profile{
+        border: none;
+    }
+    .profile-wrapper{
+        width: 200px;
+    }
+    .profile-info{
+        margin: auto;
+    }
+    .nickname{
+        font-family: 'Merriweather', serif;
+        color: #000;
+    }
+    .sharing{
+        width: 70%;
+        margin: auto;
+    }
+}
+
 
 .hidden{
     display: none;
@@ -864,10 +1020,35 @@ html {
 .error{
     color: rgb(186, 0, 0);
     font-size: 14px;
+    display: block;
+    position: relative;
+    top: 2vh;
+    margin-bottom: 10vh;
 }
 
 .transpanent{
     opacity: 0;
+}
+
+.faq{
+    display: flex;
+    width: 98%;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.faq-left, .faq-right{
+    width: 48%;
+}
+
+.question{
+    display: block;
+    height: 60px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 15px;
 }
 
 @media screen and (max-width: 1420px) {
@@ -876,6 +1057,57 @@ html {
         font-size: 12px;
     }
     .money{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 700px){
+    .error{
+        margin-bottom: 8vh;
+    }
+}
+
+@media screen and (max-height: 650px){
+    .error{
+        margin-bottom: 5vh;
+    }
+}
+
+@media screen and (max-height: 600px){
+    .error{
+        top: 1vh;
+        margin-bottom: 3vh;
+    }
+}
+
+@media screen and (max-height: 580px){
+    .error{
+        top: 0vh;
+        margin-bottom: 0vh;
+    }
+    .login-form, .register-form{
+        font-size: 14px;
+        font-family: 'Merriweather', serif;
+    }
+    .login-form-input{
+        height: 4vh;
+    }
+    .login-form-submit{
+        height: 5vh;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-height: 470px){
+    .login-form, .register-form{
+        font-size: 12px;
+        font-family: 'Merriweather', serif;
+    }
+    .login-form-input{
+        height: 3vh;
+    }
+    .login-form-submit{
+        height: 3vh;
         font-size: 12px;
     }
 }
@@ -902,8 +1134,7 @@ html {
         grid-template: "head"
                         "left"
                        "main"
-                       "footer";
-        /*grid-template-columns: 280px calc(100vw - 300px);*/
+                       "content";
     }
     .conditions-wrapper{
         width: 100vw;
@@ -920,6 +1151,10 @@ html {
         grid-area: left;
         overflow-y: scroll;
         overflow-x:hidden;
+    }
+    .popup-login{
+        width: 30vw;
+        left: 35vw;
     }
 }
 
@@ -942,9 +1177,54 @@ html {
     .title{
         font-size: 60px;
     }
+    .popup-login{
+        width: 40vw;
+        left: 30vw;
+    }
 }
 
 @media screen and (max-width: 800px) {
+    .sort{
+        display: block;
+    }
+    .search{
+        margin-left: 2%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: block;
+    }
+    
+    .search-label{
+        margin: auto;
+        margin-bottom: 20px;
+        width: 70%;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+    }
+    
+    .search-input{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    
+    .search-btn{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .cansel-btn{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
     .title{
         font-size: 50px;
     }
@@ -959,6 +1239,11 @@ html {
     .car-list{
         grid-template-columns: 1fr;
     }
+    .popup-login{
+        width: 50vw;
+        left: 30vw;
+    }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -979,6 +1264,10 @@ html {
     }
     .money{
         font-size: 9px;
+    }
+    .popup-login{
+        width: 80vw;
+        left: 15vw;
     }
 }
 

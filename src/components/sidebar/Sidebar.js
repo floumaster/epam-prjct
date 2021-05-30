@@ -1,17 +1,16 @@
 import React, {useRef, useEffect, useContext} from 'react'
 import { NavLink } from 'react-router-dom';
 import Context from '../context'
+import {useDispatch, useSelector } from "react-redux"
+import { contentActions } from '../../store/content/actions';
 
 function SideBar(){
-    const {sideBarRef, setCity, city, setCurrPage, queryObj, setQueryObj} = useContext(Context);
-    const KharkivRef = useRef(null);
-    const KievRef = useRef(null);
-    const DneprRef = useRef(null);
-    const LvivRef = useRef(null);
-    const ClassForm = useRef(null);
-    const KppForm = useRef(null);
-    const TypeForm = useRef(null);
-    const DriveForm = useRef(null);
+    const {KharkivRef, KievRef, DneprRef, LvivRef, ClassForm, KppForm, TypeForm, DriveForm, sideBarRef} = useContext(Context);
+    const dispatch = useDispatch();
+    const { city, queryObj } = useSelector((state)=>state.content);
+    const setCity = (city) => dispatch(contentActions.setCity(city));
+    const setCurrPage = (page) => dispatch(contentActions.setCurrPage(page));
+    const setQueryObj = (obj) => dispatch(contentActions.setQueryObj(obj));
     useEffect(() => {
         switch(city){
             case 'Kharkiv':
@@ -29,14 +28,6 @@ function SideBar(){
             default:
                 break;
         }
-        /*const refs = [ClassForm, KppForm, TypeForm, DriveForm];
-        refs.forEach(el=>{
-            let formElements = el.current.elements;
-            for (var i=0; i<formElements.length; i++){
-                if (formElements[i].type==="checkbox")
-                    formElements[i].value = true;
-            }
-        })*/
     });
     return (
         <aside className="sidebar" ref={sideBarRef}>

@@ -1,8 +1,12 @@
 import React, {useContext} from 'react';
 import Context from '../context'
+import {useDispatch } from "react-redux"
+import { contentActions } from '../../store/content/actions';
 
 function Register(){
-    const {regLoaderRef, closePopUp, registerRef, setRegisterInfo} = useContext(Context);
+    const dispatch = useDispatch();
+    const setRegisterInfo = (info) => dispatch(contentActions.setRegisterInfo(info));
+    const {closePopUp, regLoaderRef, registerRef} = useContext(Context);
     return(
         <div className="popup-login hidden" ref={registerRef}>
             <form className="register-form" onSubmit={(e)=>{
@@ -26,8 +30,8 @@ function Register(){
                 }
                 setRegisterInfo(loginInfo)
             }}>
-                <h2 className="login-form-title">Register</h2>
                 <a className="close-btn" onClick={()=>{closePopUp(registerRef)}}>x</a>
+                <h2 className="login-form-title">Register</h2>
                 <label className="login-form-label">Username</label>
                 <input className="login-form-input" type="input"/>
                 <label className="login-form-label">Full name</label>
