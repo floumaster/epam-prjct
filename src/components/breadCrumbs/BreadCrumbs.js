@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import {useDispatch, useSelector } from "react-redux"
 import { contentActions } from '../../store/content/actions';
+import './BreadCrumbs.scss'
 
 function Breadcrumbs(){
     const breadcrumbs = useBreadcrumbs();

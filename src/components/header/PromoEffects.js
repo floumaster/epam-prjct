@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import Context from '../context'
+import './PromoEffects.scss'
 
 function PromoEffects(){
     const { videoRef, promoRef } = useContext(Context);

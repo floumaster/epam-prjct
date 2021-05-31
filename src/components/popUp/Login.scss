@@ -1,0 +1,263 @@
+$black: #000;
+$b: 1px solid $black;
+
+.popup-login{
+    width: 24vw;
+    height: 90vh;
+    background-color: #fff;
+    position: fixed;
+    top: calc((100vh - 90vh)/2);
+    left: calc((100vw - 24vw)/2);
+    border: $b;
+    z-index: 3;
+}
+
+.login-form, .register-form{
+    width: 90%;
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+}
+
+.close-btn{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+    position: relative;
+    top: 1vh;
+    left: 10px;
+    margin-bottom: 3vh;
+    margin-left: 80%;
+    margin-top: 5%;
+    cursor: pointer;
+    display: block;
+}
+
+.login-form-title{
+    display: block;
+    margin-bottom: 10%;
+    font-size: 30px;
+}
+
+.login-form-label{
+    margin-bottom: 20px;
+}
+
+.login-form-input{
+    width: 80%;
+    height: 5vh;
+}
+
+.login-form-label, .login-form-input{
+    display: block;
+}
+
+.login-form-data, .login-form-input{
+    display: block;
+    margin: auto;
+    margin-bottom: 3vh;
+}
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 2vh;
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(255, 182, 46);
+    margin: -4px 0 0 -4px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.error{
+    color: rgb(186, 0, 0);
+    font-size: 14px;
+    display: block;
+    position: relative;
+    top: 2vh;
+    margin-bottom: 10vh;
+}
+
+.login-form-submit{
+    width: 80%;
+    height: 40px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    background-color: rgb(255, 182, 46);
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    &:hover{
+        background-color: rgb(255, 137, 11);
+    }
+}
+
+.transpanent{
+    opacity: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+@media screen and (max-height: 700px){
+  .error{
+      margin-bottom: 8vh;
+  }
+}
+
+@media screen and (max-height: 650px){
+  .error{
+      margin-bottom: 5vh;
+  }
+}
+
+@media screen and (max-height: 600px){
+  .error{
+      top: 1vh;
+      margin-bottom: 3vh;
+  }
+}
+
+@media screen and (max-height: 580px){
+  .error{
+    top: 0vh;
+    margin-bottom: 0vh;
+  }
+  
+  .login-form, .register-form{
+      font-size: 14px;
+      font-family: 'Merriweather', serif;
+  }
+
+  .login-form-input{
+      height: 4vh;
+  }
+
+  .login-form-submit{
+    height: 5vh;
+    font-size: 14px;
+}
+}
+
+@media screen and (max-height: 470px){
+  .login-form, .register-form{
+      font-size: 12px;
+      font-family: 'Merriweather', serif;
+  }
+
+  .login-form-input{
+      height: 3vh;
+  }
+
+  .login-form-submit{
+    height: 3vh;
+    font-size: 12px;
+}
+}
+
+@media screen and (max-width: 1200px) {
+  .popup-login{
+      width: 30vw;
+      left: 35vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .popup-login{
+      width: 40vw;
+      left: 30vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .popup-login{
+      width: 50vw;
+      left: 25vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .popup-login{
+      width: 80vw;
+      left: 10vw;
+  }
+}

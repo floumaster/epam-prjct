@@ -1,0 +1,225 @@
+$black: #000;
+
+.content-wrapper{
+    grid-area: main;
+}
+
+.content-wrapper, .sidebar{
+    background-color: rgb(255, 255, 255);
+}
+
+.lds-circle {
+    display: inline-block;
+    transform: translateZ(1px);
+    margin-bottom: 20px;
+}
+
+.lds-circle > div {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    background: rgb(255, 182, 46);
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes lds-circle {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+      transform: rotateY(3600deg);
+    }
+}
+
+.no-cars{
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.car-list{
+    padding: 10px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.car{
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.car:hover{
+    box-shadow: 0px 0px 3px 9px rgba(187, 187, 187, 0.5);
+}
+
+.car-photo{
+    margin-top: 20px;
+    width: 300px;
+    height: auto;
+}
+
+.car-name{
+    font-family: 'Merriweather', serif;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.characteristics{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.characteristic{
+    width: 20%;
+}
+
+.characteristic-info{
+    width: 100%;
+    margin: 0;
+}
+
+.characteristic-photo{
+    width: 50px;
+    height: 50px;
+}
+
+.price{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.price-position{
+    width: 20%;
+}
+
+.position-name{
+    line-height: 30px;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(224, 218, 218);
+    border: 1px solid $black;
+}
+
+.money{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid $black;
+    border-top: none;
+}
+
+.booking-btn{
+    display: block;
+    outline: none;
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    border-radius: 30px;
+    background-color: rgb(255, 182, 46);
+    border: none;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    &:hover{
+        background-color: rgb(255, 137, 11);
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.fixed{
+    position:fixed;
+    top: 14vh;
+    left: 0;
+}
+
+@media screen and (max-width: 1420px) {
+    .position-name{
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .money{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .car-list{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .sidebar{
+        position: relative;
+        width: 100%;
+        height: 500px;
+        margin-bottom: 100px;
+        grid-area: left;
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .car-list{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .characteristic-photo{
+        width: 40px;
+        height: 40px;
+    }
+    .car-photo{
+        margin-top: 20px;
+        width: 250px;
+        height: auto;
+    }
+    .position-name{
+        font-size: 9px;
+    }
+    .money{
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .characteristic-photo{
+        width: 30px;
+        height: 30px;
+    }
+    .car-photo{
+        margin-top: 20px;
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .position-name{
+        font-size: 8px;
+    }
+    .money{
+        font-size: 8px;
+    }
+}

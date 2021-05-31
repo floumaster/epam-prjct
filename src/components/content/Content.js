@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { nanoid } from 'nanoid';
 import Pagination from './pagination/Pagination'
 import SideBar from '../sidebar/Sidebar'
@@ -7,6 +7,7 @@ import BreadCrumbs from '../breadCrumbs/BreadCrumbs'
 import { useSelector, useDispatch } from "react-redux";
 import { contentActions } from '../../store/content/actions';
 import Context from '../context'
+import './Content.scss'
 
 function handleScroll(sideBarRef, navBarRef, videoRef, isContentVisible){
     if(isContentVisible && sideBarRef.current){

@@ -17,6 +17,7 @@ import {
   TelegramIcon,
   TwitterIcon
 } from "react-share";
+import './MobileNavBar.scss'
 
 function MobileNavbar(){
     const citiesRef = useRef(null);
@@ -48,8 +49,8 @@ function MobileNavbar(){
                 <div className="with-arrow">
                     <NavLink className="navbar-link" to="/" onClick={()=>{setIsContentVisible(true)}}>Autopark</NavLink>
                     <img className="navbar-arrow" src="../images/arrow.png" alt="arrow" onClick={(e)=>{
-                        citiesRef.current.className = (citiesRef.current.className == "mobile-drop-list" ? "mobile-drop-list noHight" : "mobile-drop-list");
-                        e.target.className = (e.target.className == "navbar-arrow" ? "navbar-arrow rotated" : "navbar-arrow");
+                        citiesRef.current.className = (citiesRef.current.className === "mobile-drop-list" ? "mobile-drop-list noHight" : "mobile-drop-list");
+                        e.target.className = (e.target.className === "navbar-arrow" ? "navbar-arrow rotated" : "navbar-arrow");
                     }}/>
                 </div>
                   <ul className="mobile-drop-list noHight" ref={citiesRef}>
@@ -70,8 +71,8 @@ function MobileNavbar(){
                 <div className="with-arrow">
                     <NavLink className="navbar-link" to="/about" onClick={()=>{setIsContentVisible(false)}}>Company</NavLink>
                     <img className="navbar-arrow" src="../images/arrow.png" alt="arrow" onClick={(e)=>{
-                        companyRef.current.className = (companyRef.current.className == "mobile-drop-list" ? "mobile-drop-list noHight" : "mobile-drop-list");
-                        e.target.className = (e.target.className == "navbar-arrow" ? "navbar-arrow rotated" : "navbar-arrow");
+                        companyRef.current.className = (companyRef.current.className === "mobile-drop-list" ? "mobile-drop-list noHight" : "mobile-drop-list");
+                        e.target.className = (e.target.className === "navbar-arrow" ? "navbar-arrow rotated" : "navbar-arrow");
                     }}/>
                 </div>
                 <ul className="mobile-drop-list noHight" ref={companyRef}>
@@ -90,8 +91,8 @@ function MobileNavbar(){
                 <div className="with-arrow">
                     <div className="navbar-link">Login</div>
                     <img className="navbar-arrow" src="../images/arrow.png" alt="arrow" onClick={(e)=>{
-                        personLoginRef.current.className = (personLoginRef.current.className == "mobile-drop-list" ? "mobile-drop-list noHight" : "mobile-drop-list");
-                        e.target.className = (e.target.className == "navbar-arrow" ? "navbar-arrow rotated" : "navbar-arrow");
+                        personLoginRef.current.className = (personLoginRef.current.className === "mobile-drop-list" ? "mobile-drop-list noHight" : "mobile-drop-list");
+                        e.target.className = (e.target.className === "navbar-arrow" ? "navbar-arrow rotated" : "navbar-arrow");
                     }}/>
                 </div>
                 <ul className="mobile-drop-list noHight" ref={personLoginRef}>
@@ -121,8 +122,8 @@ function MobileNavbar(){
                 <div className="with-arrow">
                     <div className="navbar-link">Share</div>
                     <img className="navbar-arrow" src="../images/arrow.png" alt="arrow" onClick={(e)=>{
-                        shareRef.current.className = (shareRef.current.className == "sharing" ? "sharing noHight" : "sharing");
-                        e.target.className = (e.target.className == "navbar-arrow" ? "navbar-arrow rotated" : "navbar-arrow");
+                        shareRef.current.className = (shareRef.current.className === "sharing" ? "sharing noHight" : "sharing");
+                        e.target.className = (e.target.className === "navbar-arrow" ? "navbar-arrow rotated" : "navbar-arrow");
                     }}/>
                 </div>
                 <div className="sharing noHight" ref={shareRef}>

@@ -1,0 +1,210 @@
+$black: #000;
+
+.navbar{
+    width: 100%;
+    background-color: $black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    top: 0;
+    height: 14vh;
+}
+
+.navbar-links{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    font-family: 'Merriweather', serif;
+}
+
+.navbar-unit{
+    width: 50%;
+    padding-top: 40px;
+    display: block;
+}
+
+.drop-list-unit{
+    height: 0;
+    font-size: 0;
+    transition: all .5s;
+    display: block;
+    margin-bottom: 0;
+    width: 100%;
+    line-height: 0px;
+    border-bottom: 0 solid #fff;
+}
+
+.navbar-unit:hover .drop-list-unit {
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    border-bottom: 2px solid #fff;
+}
+
+.with-border{
+    border-right: 2px solid #fff;
+}
+
+.navbar-link {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-link:after {
+    background-color: hsl(0, 0%, 100%);
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    transition: width .3s ease-in-out;
+}
+
+.navbar-link:hover:after,
+.navbar-link:focus:after {
+    width: 100%;
+}
+
+.navbar-link:hover{
+    cursor: pointer;
+}
+
+.drop-list{
+    background-color: #000;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.drop-list-link{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.drop-list-link:hover{
+    background-color: rgb(62, 62, 62);
+}
+
+.logo-wrapper{
+    width: 10%;
+    font-family: 'Goblin One', cursive;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.logo-link{
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-wrapper:hover{
+    font-size: 22px;
+}
+
+.profile{
+    width: 50%;
+    height: 14vh;
+    display: block;
+    justify-content: left;
+    border-right: 2px solid #fff;
+}
+
+.profile-wrapper{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    height: 14vh;
+}
+
+.profile-info{
+    margin-top: 0;
+}
+
+.profile_photo-wrapper{
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.profile_photo{
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+.nickname{
+    cursor: pointer;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.logout{
+    margin-top: 40px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.login{
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    padding-top: 40px;
+    width: 100%;
+    height: 100px;
+}
+
+.sign-in, .sign-up{
+    display: block;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Merriweather', serif;
+}
+
+.sign-in:after, .sign-up:after {
+    background-color: hsl(0, 0%, 100%);
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0px;
+    transition: width .5s ease-in-out;
+}
+.sign-in:hover:after, .sign-up:hover:after,
+.sign-in:focus:after, .sign-up:focus:after {
+    width: 100%;
+}
+
+.sharing{
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+}
+
+.hidden{
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar{
+        display: none;
+    }
+    .mobile-navbar{
+        display: block;
+    }
+}

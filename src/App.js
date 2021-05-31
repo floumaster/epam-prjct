@@ -1,8 +1,7 @@
-import {useRef, useEffect, useState} from 'react'
+import {useRef, useEffect} from 'react'
 import {useDispatch, useSelector } from "react-redux"
 import { contentActions } from './store/content/actions';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   BrowserRouter
@@ -12,7 +11,6 @@ import Context from './components/context'
 import Loader from './components/loader/Loader'
 import Content from './components/content/Content'
 import Contacts from './components/contacts/Contacts'
-import Faq from './components/faq/Faq'
 import About from './components/about/About'
 import Login from './components/popUp/Login'
 import Register from './components/popUp/Registration'
@@ -106,7 +104,7 @@ function App() {
   }
   return (
     <>
-      <Context.Provider value={{logout, sideBarRef, navBarRef, wrapperRef, loaderRef, videoRef, loginRef, registerRef, errorRef, loginLoaderRef, personRef, popupRef, regLoaderRef, promoRef, contentLoaderRef, contentRef, mobilePersonRef, mobilePopupRef, KharkivRef, KievRef, DneprRef, LvivRef, ClassForm, KppForm, TypeForm, DriveForm}}>
+      <Context.Provider value={{closePopUp, logout, sideBarRef, navBarRef, wrapperRef, loaderRef, videoRef, loginRef, registerRef, errorRef, loginLoaderRef, personRef, popupRef, regLoaderRef, promoRef, contentLoaderRef, contentRef, mobilePersonRef, mobilePopupRef, KharkivRef, KievRef, DneprRef, LvivRef, ClassForm, KppForm, TypeForm, DriveForm}}>
         <Loader/>
         <div className="wrapper" ref={wrapperRef}>
           <BrowserRouter>
@@ -114,7 +112,6 @@ function App() {
             <Switch>
               <Route exact path='/about' component={()=><About/>}/>
               <Route exact path='/contacts' render={()=><Contacts/>}/>
-              <Route exact path='/faq' render={()=><Faq/>}/>
               <Route path={['/', '/Kiev', '/Lviv', '/Kharkiv', '/Dnepr']} render={()=><Content/>}/>
             </Switch>
           </BrowserRouter>

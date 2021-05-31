@@ -1,0 +1,17 @@
+.content{
+    position: relative;
+    grid-area: content;
+    margin: auto;
+    top: 14vh;
+    width: 100%;
+}
+
+.map{
+    width: 100%;
+}
+
+.google-map{
+    margin-top: 40px;
+    width: 98%;
+    height: 100vh;
+}

@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import Context from '../context'
 import {useDispatch} from "react-redux"
-import { contentActions } from '../../store/content/actions';
 import { loginActions } from '../../store/login/actions';
+import './Login.scss'
 
 function Login(){
     const dispatch = useDispatch();
@@ -26,7 +26,9 @@ function Login(){
                 }
                 setLoginInfo(loginInfo)
             }}>
-                <a className="close-btn" onClick={()=>{closePopUp(loginRef)}}>x</a>
+                <button className="close-btn" onClick={(e)=>{
+                    e.preventDefault();
+                    closePopUp(loginRef)}}>x</button>
                 <h2 className="login-form-title">Login</h2>
                 <label className="login-form-label">Username</label>
                 <input className="login-form-input" type="input"/>

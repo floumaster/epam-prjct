@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import Context from '../context'
 import {useDispatch } from "react-redux"
 import { contentActions } from '../../store/content/actions';
+import './About.scss'
 
 function About(){
     const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function About(){
         width: 100
       };
     return (
-        <div className="content">
+        <section className="content">
             <BreadCrumbs/>
             <img className="big-car" src="../images/big_car.png" alt="big car"/>
             <div className="partners-wrapper">
@@ -47,7 +48,7 @@ function About(){
                     </Slider>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

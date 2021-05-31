@@ -1,0 +1,124 @@
+.sort{
+    width: 98%;
+    margin: auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2.5%;
+}
+
+.booking-btn{
+    display: block;
+    outline: none;
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    border-radius: 30px;
+    background-color: rgb(255, 182, 46);
+    border: none;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    &:hover{
+        background-color: rgb(255, 137, 11);
+    }
+}
+
+.search{
+    margin-left: 2%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    display: flex;
+    font-family: 'Merriweather', serif;
+}
+
+.search-label{
+    width: 200px;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+}
+
+.search-input{
+    display: inline-block;
+    border-radius: 25px 0 0 25px;
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    font-family: 'Merriweather', serif;
+    padding-left: 2%;
+    padding-right: 2%;
+    outline: none;
+}
+
+.search-btn{
+    display: inline-block;
+    border-radius: 0 25px 25px 0;
+    width: 70px;
+    height: 40px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Merriweather', serif;
+    background-color: rgb(255, 182, 46);
+    outline: none;
+}
+
+.cansel-btn{
+    display: inline-block;
+    border-radius: 25px;
+    margin-left: 20px;
+    width: 100px;
+    height: 40px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Merriweather', serif;
+    background-color: rgb(255, 182, 46);
+    outline: none;
+}
+
+@media screen and (max-width: 800px) {
+    .sort{
+        display: block;
+    }
+
+    .search{
+        margin-left: 2%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: block;
+    }
+
+    .search-label{
+        margin: auto;
+        margin-bottom: 20px;
+        width: 70%;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .search-input{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .search-btn{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .cansel-btn{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}

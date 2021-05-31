@@ -1,8 +1,8 @@
-import React, {useContext, useState, useRef} from 'react';
+import React, {useRef} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { contentActions } from '../../store/content/actions';
 import { sortActions } from '../../store/sort/actions';
-import Context from '../context'
+import './SortAndSearch.scss'
 
 function SortAndSearch(){
     const { cars } = useSelector((state)=>state.content);

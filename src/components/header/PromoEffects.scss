@@ -1,0 +1,132 @@
+$black: #000;
+
+.promo-wrapper{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.promo{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100vh;
+    object-fit: cover;
+}
+
+.promo-effect{
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width:100%;
+    height: 100vh;
+    color: #fff;
+    font-family: 'Merriweather', serif;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8018557764902836) 67%, rgba(0,0,0,0.7822479333530288) 82%, rgba(0,0,0,0.3200630594034489) 100%); 
+}
+
+.title{
+    margin-top: 45vh;
+    font-size: 87px;
+}
+
+.main_link-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    width: 340px;
+    left: calc(50% - 170px);
+    margin-top: 130px;
+    font-size: 14px;
+    border: 2px solid #fff;
+    background: linear-gradient(to right, white 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    transition:all .5s ease;
+    text-decoration: none;
+    color: #fff;
+}
+
+.main_link-wrapper:hover{
+    background-position:left  bottom;
+    color: $black;
+    border: 2px solid $black;
+    cursor: pointer;
+}
+
+.main_link{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 80%;
+    padding-top: 22px;
+    height: 60px;
+    border-right: 2px solid #fff;
+    transition:all .5s ease;
+}
+
+.main_link:hover{
+    color: rgb(0, 0, 0);
+    border-right: 2px solid $black;
+}
+
+.main_link::after{
+    content: "\27A0";
+    position: relative;
+    left: 115px;
+}
+
+.hidden{
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .title{
+        margin-top: 30vh;
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .title{
+        font-size: 70px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .title{
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .title{
+        font-size: 50px;
+    }
+    .main_link-wrapper{
+        width: 280px;
+        left: calc(50% - 140px);
+        font-size: 14px;
+    }
+    .main_link::after{
+        left: 84px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .main_link-wrapper{
+        width: 220px;
+        left: calc(50% - 110px);
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    .main_link::after{
+        left: 52px;
+    }
+}

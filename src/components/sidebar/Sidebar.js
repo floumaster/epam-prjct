@@ -1,8 +1,9 @@
-import React, {useRef, useEffect, useContext} from 'react'
+import React, {useEffect, useContext} from 'react'
 import { NavLink } from 'react-router-dom';
 import Context from '../context'
 import {useDispatch, useSelector } from "react-redux"
 import { contentActions } from '../../store/content/actions';
+import './Sidebar.scss'
 
 function SideBar(){
     const {KharkivRef, KievRef, DneprRef, LvivRef, ClassForm, KppForm, TypeForm, DriveForm, sideBarRef} = useContext(Context);

@@ -1,7 +1,8 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import { nanoid } from 'nanoid';
 import {useDispatch, useSelector } from "react-redux"
 import { contentActions } from '../../../store/content/actions';
+import './Pagination.scss'
 
 function Pagination(){
     const dispatch = useDispatch();
@@ -25,7 +26,7 @@ function Pagination(){
         }
     }
     return(
-        <div className="pagination">
+        <section className="pagination">
             <div className="pagination-left_arrow">
                 <img className="pagination-left_arrow-img" src="../images/right.png" alt="prev" onClick={()=>{setCurrPage(curr_page === 1 ? curr_page : curr_page - 1)}}/>
             </div>
@@ -39,7 +40,7 @@ function Pagination(){
             <div className="pagination-right_arrow">
                 <img className="pagination-left_arrow-img" src="../images/right.png" alt="next" onClick={()=>{setCurrPage(curr_page === pages ? curr_page : curr_page + 1)}}/>
             </div>
-        </div>
+        </section>
     )
 }
 

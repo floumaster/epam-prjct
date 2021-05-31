@@ -1,0 +1,39 @@
+.pagination{
+    width: 30%;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.pagination-left_arrow, .pagination-right_arrow{
+    width: 20%;
+}
+
+.pagination-left_arrow-img{
+    margin-top: 10px;
+    cursor: pointer;
+    width: 10px;
+    height: auto;
+}
+
+.pagination-left_arrow .pagination-left_arrow-img{
+    transform: rotate(180deg);
+}
+
+.pagination-links{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    font-family: 'Merriweather', serif;
+    font-size: 25px;
+}
+
+.pagination-link{
+    cursor: pointer;
+}
+
+.curr{
+    color: rgb(160, 160, 160);
+}

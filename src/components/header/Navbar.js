@@ -17,6 +17,7 @@ import {
     TelegramIcon,
     TwitterIcon
   } from "react-share";
+  import './Navbar.scss'
 
 function Navbar(){
     const dispatch = useDispatch();
@@ -74,7 +75,7 @@ function Navbar(){
                     <div className="profile-wrapper hidden" ref={personRef}>
                         <figure className="profile-info">
                             <div className="profile_photo-wrapper">
-                                <img className="profile_photo" src="../images/boom.png" alt="profile"/>
+                                <img className="profile_photo" src="https://bytes.ua/wp-content/uploads/2017/08/no-image.png" alt="profile"/>
                             </div>
                             <figcaption className="nickname">{person.fullname}</figcaption>
                         </figure>

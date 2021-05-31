@@ -1,8 +1,9 @@
 import React, {useContext} from 'react';
 import Context from '../context'
 import {useDispatch } from "react-redux"
-import { contentActions } from '../../store/content/actions';
 import { loginActions } from '../../store/login/actions';
+import './Login.scss'
+import './Registration.scss'
 
 function Register(){
     const dispatch = useDispatch();
@@ -31,7 +32,9 @@ function Register(){
                 }
                 setRegisterInfo(loginInfo)
             }}>
-                <a className="close-btn" onClick={()=>{closePopUp(registerRef)}}>x</a>
+                <button className="close-btn" onClick={(e)=>{
+                    e.preventDefault();
+                    closePopUp(registerRef)}}>x</button>
                 <h2 className="login-form-title">Register</h2>
                 <label className="login-form-label">Username</label>
                 <input className="login-form-input" type="input"/>

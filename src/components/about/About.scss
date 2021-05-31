@@ -1,0 +1,44 @@
+.content{
+    position: relative;
+    grid-area: content;
+    margin: auto;
+    top: 14vh;
+    width: 100%;
+}
+
+.big-car{
+    margin-top: 30px;
+    width: 100%;
+    height: 40vh;
+}
+
+.partners-wrapper{
+    width: 100vw;
+    margin-top: 50px;
+    background-color: rgb(224, 224, 224);
+    box-sizing: border-box;
+}
+
+.partners-title{
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    padding-top: 40px;
+}
+
+.partners-slogan{
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    padding-top: 20px;
+    color: grey;
+}
+
+.partners-slider{
+    width: 80%;
+    margin: auto;
+}
+
+.partner-logo{
+    display: block;
+    margin: auto;
+    width: 100%;
+}

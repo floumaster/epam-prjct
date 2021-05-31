@@ -1,0 +1,254 @@
+@media screen and (max-width: 1420px) {
+    .position-name{
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .money{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 700px){
+    .error{
+        margin-bottom: 8vh;
+    }
+}
+
+@media screen and (max-height: 650px){
+    .error{
+        margin-bottom: 5vh;
+    }
+}
+
+@media screen and (max-height: 600px){
+    .error{
+        top: 1vh;
+        margin-bottom: 3vh;
+    }
+}
+
+@media screen and (max-height: 580px){
+    .error{
+        top: 0vh;
+        margin-bottom: 0vh;
+    }
+    .login-form, .register-form{
+        font-size: 14px;
+        font-family: 'Merriweather', serif;
+    }
+    .login-form-input{
+        height: 4vh;
+    }
+    .login-form-submit{
+        height: 5vh;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-height: 470px){
+    .login-form, .register-form{
+        font-size: 12px;
+        font-family: 'Merriweather', serif;
+    }
+    .login-form-input{
+        height: 3vh;
+    }
+    .login-form-submit{
+        height: 3vh;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .title{
+        margin-top: 30vh;
+        font-size: 80px;
+    }
+    .car-list{
+        grid-template-columns: 1fr 1fr;
+    }
+    .popup-login{
+        width: 30vw;
+        left: 35vw;
+    }
+}
+
+.blured{
+    filter: blur(2px);
+}
+
+.logo-link{
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar{
+        display: none;
+    }
+    .mobile-navbar{
+        display: block;
+    }
+    .title{
+        font-size: 70px;
+    }
+    .conditions-wrapper{
+        width: 100vw;
+        height: 100vh;
+    }
+    .filter{
+        width: 90vw;
+    }
+    .sidebar{
+        position: relative;
+        width: 100%;
+        height: 500px;
+        margin-bottom: 100px;
+        grid-area: left;
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+    .wrapper{
+        display: grid;
+        width: 100%;
+        grid-template: "head"
+                        "left"
+                       "main"
+                       "content";
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .title{
+        font-size: 60px;
+    }
+    .popup-login{
+        width: 40vw;
+        left: 30vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .sort{
+        display: block;
+    }
+    .search{
+        margin-left: 2%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: block;
+    }
+    
+    .search-label{
+        margin: auto;
+        margin-bottom: 20px;
+        width: 70%;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+    }
+    
+    .search-input{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    
+    .search-btn{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .cansel-btn{
+        display: block;
+        border-radius: 25px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .title{
+        font-size: 50px;
+    }
+    .main_link-wrapper{
+        width: 280px;
+        left: calc(50% - 140px);
+        font-size: 14px;
+    }
+    .main_link::after{
+        left: 84px;
+    }
+    .car-list{
+        grid-template-columns: 1fr;
+    }
+    .popup-login{
+        width: 50vw;
+        left: 25vw;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .characteristic-photo{
+        width: 40px;
+        height: 40px;
+    }
+    .car-photo{
+        margin-top: 20px;
+        width: 250px;
+        height: auto;
+    }
+    .list-title{
+        font-size: 30px;
+    }
+    .position-name{
+        font-size: 9px;
+    }
+    .money{
+        font-size: 9px;
+    }
+    .popup-login{
+        width: 80vw;
+        left: 10vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .characteristic-photo{
+        width: 30px;
+        height: 30px;
+    }
+    .car-photo{
+        margin-top: 20px;
+        width: 200px;
+        height: auto;
+    }
+    .list-title{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .main_link-wrapper{
+        width: 220px;
+        left: calc(50% - 110px);
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    .main_link::after{
+        left: 52px;
+    }
+    .list-title{
+        font-size: 20px;
+    }
+    .position-name{
+        font-size: 8px;
+    }
+    .money{
+        font-size: 8px;
+    }
+}

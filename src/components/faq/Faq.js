@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import BreadCrumbs from '../breadCrumbs/BreadCrumbs'
 import Context from '../context'
-import {useDispatch, useSelector } from "react-redux"
+import {useDispatch } from "react-redux"
 import { contentActions } from '../../store/content/actions';
 
 function Faq(){
